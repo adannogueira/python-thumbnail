@@ -48,6 +48,36 @@ functions:
             - suffix: .png
     layers:
       - 'arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-Pillow:5'
+  
+  list:
+    handler: handler.s3_get_thumbnail_urls
+    events:
+      - http:
+          path: images/all
+          method: get
+          cors: true
+    layers:
+      - 'arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-Pillow:5'
+
+  get:
+    handler: handler.s3_get_item
+    events:
+      - http:
+          path: images/get/{id} # the {id} is the same variable for Dynamo AttributeName
+          method: get
+          cors: true
+    layers:
+      - 'arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-Pillow:5'
+
+  delete:
+    handler: handler.s3_delete_item
+    events:
+      - http:
+          path: images/delete/{id}
+          method: delete
+          cors: true
+    layers:
+      - 'arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-Pillow:5'
 
 resources:
   Resources:
