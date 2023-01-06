@@ -56,14 +56,14 @@ Which should result in response similar to the following:
 ```json
 {
     "statusCode": 200,
-    'headers': {'Content-Type': 'application/json'},
-    'body': "{
+    "headers": {"Content-Type": "application/json"},
+    "body": {
       "createdAt": "2022-12-29 11:54:14.003456",
       "id": "7e06fef0-4927-4f5e-9394-5351ac45d389",
       "url": "https://s3.amazonaws.com/python-thumbs/modelo_thumbnail.png",
       "approxReducedSize": "1.62869 KB",
       "updatedAt": "2022-12-29 11:54:14.003477"
-    }"
+    }
 }
 ```
 
